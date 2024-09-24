@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaLocationArrow,
+  FaGithub
 } from "react-icons/fa6";
 
 const FooterLinks = [
@@ -49,7 +50,7 @@ const Footer = () => {
             }
             {
               <p className="text-gray-500 mt-4">
-                Made with 💖 by The Coding Journey
+                Created by Amjad ali
               </p>
             }
             {
@@ -105,6 +106,7 @@ const Footer = () => {
             <div className="py-8 px-4 col-span-2 sm:col-auto">
               <h1 className="text-xl font-bold sm:text-left mb-3">Address</h1>
               <div>
+                
                 {
                   <div className="flex items-center gap-3">
                     <FaLocationArrow />
@@ -120,6 +122,14 @@ const Footer = () => {
 
                 {/* social links */}
                 <div className="flex items-center gap-3 mt-6">
+                  
+                <a
+                    href="https://github.com/Amjad-722"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub className="text-3xl hover:text-primary duration-200" />
+                  </a>
                   <a
                     href=""
                     target="_blank"
