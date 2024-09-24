@@ -18,12 +18,12 @@ const Popup = ({
   const [form, setForm] = useState({
     name: "",
     email: "",
-    address: "",
+    
   });
   const [formErrors, setFormErrors] = useState({
     name: false,
     email: false,
-    address: false,
+    
   });
 
   const handleInputChange = (e) => {
@@ -70,8 +70,8 @@ const Popup = ({
   };
 
   const handleOrderClick = () => {
-    addToCart(product, parseInt(quantity)); // Pass product and quantity to addToCart
-    handleOrderPopup(); // Close the order popup
+    addToCart(product, parseInt(quantity)); 
+    handleOrderPopup(); 
   };
 
   return (
