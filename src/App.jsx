@@ -34,7 +34,7 @@ const BannerData2 = {
   discount: "30% OFF",
   title: "Happy Hours",
   date: "14 Jan to 28 Jan",
-  image: watch ,
+  image: watch,
   title2: "Smart Solo",
   title3: "Winter Sale",
   title4:
@@ -44,32 +44,16 @@ const BannerData2 = {
 
 const App = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
-  const [loginPopup, setLoginPopup] = React.useState(false);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [cartCount, setCartCount] = React.useState(0);
-  const [cartItems, setCartItems] = React.useState([]); // Cart items state
+  const [cartItems, setCartItems] = React.useState([]); 
 
   const handleOrderPopup = () => {
-    if (!isLoggedIn) {
-      setLoginPopup(true);
-    } else {
-      setOrderPopup(!orderPopup);
-    }
-  };
-
-  const handleLoginPopup = () => {
-    setLoginPopup(!loginPopup);
-  };
-
-  const handleLogin = () => { 
-    setIsLoggedIn(true);
-    setLoginPopup(false);
-    toast.success('Logged in successfully!');
+    setOrderPopup(!orderPopup);
   };
 
   // Add to Cart function
   const addToCart = (product, quantity) => {
-    // Check if the product is already in the cart
+   
     const existingItem = cartItems.find(item => item.id === product.id);
     if (existingItem) {
       // Update the quantity
@@ -111,8 +95,6 @@ const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden">
       <Navbar 
-        handleLoginPopup={handleLoginPopup} 
-        isLoggedIn={isLoggedIn} 
         cartCount={cartCount}
         cartItems={cartItems}
         removeFromCart={removeFromCart}
@@ -128,9 +110,6 @@ const App = () => {
       <Products 
         orderPopup={orderPopup} 
         handleOrderPopup={handleOrderPopup} 
-        isLoggedIn={isLoggedIn} 
-        handleLoginPopup={handleLoginPopup} 
-        handleLogin={handleLogin} 
         addToCart={addToCart} 
       />
       <ToastContainer
